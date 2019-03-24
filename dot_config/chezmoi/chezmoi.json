@@ -1,0 +1,25 @@
+{
+  "data": {
+    "colours": {
+      "blackd":   "#1e1e1e",
+      "black":     "#cf6a4c",
+      "redd":     "#8f9d6a",
+      "red":       "#f9ee98",
+      "greend":   "#7587a6",
+      "green":     "#9b859d",
+      "yellowd":  "#afc4db",
+      "yellow":    "#a7a7a7",
+      "blued":    "#5f5a60",
+      "blue":      "#cf6a4c",
+      "magentad": "#8f9d6a",
+      "magenta":   "#f9ee98",
+      "cyand":    "#7587a6",
+      "cyan":      "#9b859d",
+      "whited":   "#afc4db",
+      "white":     "#ffffff",
+      "fg":        "#a7a7a7",
+      "bg":        "#1e1e1e"
+      }
+  }
+}
+
