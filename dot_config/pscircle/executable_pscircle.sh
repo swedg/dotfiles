@@ -1,1 +1,0 @@
-pscircle --output-width=1366 --output-height=768 --tree-font-face="SourceCodePro" --tree-font-size=10 --dot-radius=3 --tree-radius-increment=90 --memlist-center=440.0:-100.0 --cpulist-center=440.0:100.0 --toplists-font-face="SourceCodePro" --toplists-font-size=15 --toplists-row-height=25

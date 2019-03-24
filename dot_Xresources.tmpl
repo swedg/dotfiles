@@ -1,46 +1,42 @@
-XTerm.vt100.background: black
-XTerm.vt100.foreground: white
-
-XTerm.vt100.faceName: xos4 Terminus:antialias=false
-XTerm.vt100.faceSize: 12
-XTerm.vt100.translations: #override \
+*.faceName: xos4 Terminus:antialias=false
+*.faceSize: 12
+*.translations: #override \
     Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
     Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
 
 ! special
-*.foreground:   {{ .colours.fg }}
-*.background:   {{ .colours.bg }}
-*.cursorColor:  {{ .colours.fg }}
+*.foreground:  #{{ .colours.lightgrey }}
+*.background:  #{{ .colours.black }}
+*.cursorColor: #{{ .colours.lightgrey }}
 
 ! black
-*.color0:       {{ .colours.blackd }}
-*.color8:       {{ .colours.black }}
+*.color0:      #{{ .colours.black }}
+*.color8:      #{{ .colours.grey }}
 
 ! red
-*.color1:       {{ .colours.redd }}
-*.color9:       {{ .colours.red }}
+*.color1:      #{{ .colours.red }}
+*.color9:      #{{ .colours.red }}
 
 ! green
-*.color2:       {{ .colours.greend }}
-*.color10:      {{ .colours.green }}
+*.color2:      #{{ .colours.green }}
+*.color10:     #{{ .colours.green }}
 
 ! yellow
-*.color3:       {{ .colours.yellowd }}
-*.color11:      {{ .colours.yellow }} 
+*.color3:      #{{ .colours.yellow }}
+*.color11:     #{{ .colours.yellow }} 
 
 ! blue
-*.color4:       {{ .colours.blued }}
-*.color12:      {{ .colours.blue }}
+*.color4:      #{{ .colours.blue }}
+*.color12:     #{{ .colours.blue }}
 
 ! magenta
-*.color5:       {{ .colours.magentad }}
-*.color13:      {{ .colours.magenta }}
+*.color5:      #{{ .colours.magenta }}
+*.color13:     #{{ .colours.magenta }}
 
 ! cyan
-*.color6:       {{ .colours.cyand }}
-*.color14:      {{ .colours.cyan }}
+*.color6:      #{{ .colours.cyan }}
+*.color14:     #{{ .colours.cyan }}
 
 ! white
-*.color7:       {{ .colours.whited }}
-*.color15:      {{ .colours.white }}
-
+*.color7:      #{{ .colours.white }}
+*.color15:     #{{ .colours.lightgrey }}

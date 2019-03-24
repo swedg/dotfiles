@@ -1,0 +1,21 @@
+i3lock \
+    --indicator \
+    -k \
+    -c {{ .colours.black }} \
+    --insidevercolor={{ .colours.black }}ff \
+    --insidewrongcolor={{ .colours.black }}ff \
+    --insidecolor={{ .colours.black }}ff \
+    --ringvercolor={{ .colours.yellow }}ff \
+    --ringwrongcolor={{ .colours.red }}ff \
+    --ringcolor={{ .colours.blue }}ff \
+    --line-uses-ring \
+    --timecolor={{ .colours.lightgrey }}ff \
+    --timestr="%H:%M" \
+    --datecolor={{ .colours.lightgrey }}ff \
+    --datestr="%d %m %Y" \
+    --veriftext="" \
+    --wrongtext="" \
+    --noinputtext="" \
+    --locktext="" \
+    --lockfailedtext="" \
+    --ring-width 4  
