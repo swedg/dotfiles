@@ -1,6 +1,6 @@
 pscircle \
-	--output-width=1366 \
-	--output-height=768 \
+	--output-width={{ .display0.width }} \
+	--output-height={{ .display0.height }} \
 	--background-color={{ .colours.black }} \
 	--tree-font-face="SourceCodePro" \
 	--tree-font-size=10 \
@@ -16,7 +16,7 @@ pscircle \
 	--toplists-font-color={{ .colours.lightgrey }} \
 	--tree-radius-increment=90 \
 	--toplists-font-face="SourceCodePro" \
-	--toplists-font-size=15 \
+	--toplists-font-size=12 \
 	--toplists-row-height=25 \
 	--memlist-center=440.0:-100.0 \
 	--cpulist-center=440.0:100.0 \
