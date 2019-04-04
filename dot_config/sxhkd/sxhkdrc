@@ -86,7 +86,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} '{1-9,10}'
 
 #
 # preselect
@@ -123,3 +123,39 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# move desktop to next monitor
+super + n
+    bspc desktop -m next --follow
+
+#
+# media/playback
+#
+
+# play/pause
+XF86AudioPlay
+    playerctl play-pause
+
+# next
+XF86AudioNext
+    playerctl next
+
+# previous
+XF86AudioPrev
+    playerctl previous
+
+# stop
+XF86AudioStop
+    playerctl stop
+
+# raise volume
+XF86AudioRaiseVolume
+    amixer -D pulse sset Master 5%+
+
+# lower volume
+XF86AudioLowerVolume
+    amixer -D pulse sset Master 5%-
+
+# mute
+XF86AudioMute
+    amixer -D pulse sset Master toggle-mute
