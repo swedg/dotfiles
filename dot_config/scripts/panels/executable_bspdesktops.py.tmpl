@@ -1,0 +1,56 @@
+#!/usr/bin/python
+import os
+
+def change_colours(text, colours):
+    fgmodifier = "%{F" + colours[0] + "}"
+    bgmodifier = "%{B" + colours[1] + "}"
+    return fgmodifier + bgmodifier + text
+
+def make_clickable(text, command, click_type="A"):
+    return "%{" + click_type + ":" + command + ":}" + text + "%{" + click_type + "}"
+
+# fg, bg
+default   = [os.getenv("DEFAULT_FG", "#{{ .colours.lightgrey }}"),
+             os.getenv("DEFAULT_BG", "#{{ .colours.black }}")]
+unfocused = ["#{{ .colours.lightgrey }}", "#{{ .colours.black }}"]
+focused   = ["#{{ .colours.white }}", "#{{ .colours.black }}"]
+urgent    = ["#{{ .colours.red }}", "#{{ .colours.lightgrey }}"]
+
+infos = os.popen("bspc wm -g").read()
+
+output = []
+
+for info in infos.split(":"):
+    desktop_type = info[0]
+    desktop_name = info[1:]
+    colours = unfocused
+
+    if desktop_name == "Desktop": # Hacky way to remove this
+        continue
+
+    if desktop_type == "M": # Focused monitor
+        continue
+    elif desktop_type == "m": # Unfocused monitor
+        continue
+    elif desktop_type == "O": # Occupied focused desktop
+        colours = focused 
+    elif desktop_type == "o": # Occupied unfocused desktop
+        colours = unfocused
+    elif desktop_type == "F": # Free focused desktop
+        colours = focused
+    elif desktop_type == "f": # Free unfocused desktop
+        continue
+    elif desktop_type == "U": # Urgent focused desktop
+        colours = urgent
+    elif desktop_type == "u": # Urgent unfocused desktop
+        colours = urgent
+    else:
+        continue
+    
+    visuals = change_colours(desktop_name, colours)
+
+    clickable = make_clickable(visuals, "bspc desktop -f " + desktop_name)
+
+    output.append(clickable)
+
+print(" ".join(output)+change_colours("", default))

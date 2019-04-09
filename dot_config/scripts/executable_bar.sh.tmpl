@@ -1,0 +1,14 @@
+MODULES="$HOME/.config/scripts/panels"
+
+DEFAULT_FG="{{ .colours.lightgrey }}"
+DEFAULT_BG="{{ .colours.black }}"
+
+while true; do
+  desktops=$($MODULES/bspdesktops.py)
+  clock=$($MODULES/time.sh)
+  media=$($MODULES/media.sh)
+  volume=$($MODULES/volume.sh)
+
+  echo "%{l} $desktops%{c}$clock%{r}$media   $volume "
+  sleep 0.1
+done
